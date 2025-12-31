@@ -115,7 +115,6 @@ mc-bot-ping/
 │   │   └── canvas.js
 │   └── config/
 │       └── languages.js
-├── deploy-commands.js
 ├── package.json
 ├── .env.example
 └── README.md
