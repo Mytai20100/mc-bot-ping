@@ -43,7 +43,7 @@ async function createPingImage(latency, apiLatency, lang = 'en') {
   ctx.fillStyle = '#AAAAAA';
   ctx.font = 'bold 28px Arial';
   ctx.textAlign = 'left';
-  ctx.fillText(lang === 'vi' ? 'Độ trễ Bot:' : 'Bot Latency:', 80, startY);
+  ctx.fillText(lang === 'vi' ? 'Độ lì:' : 'Bot Latency:', 80, startY);
   
   // Latency value with color based on speed
   const latencyColor = latency < 100 ? '#55FF55' : latency < 200 ? '#FFAA00' : '#FF5555';
@@ -148,7 +148,7 @@ async function createServerPingImage(serverData, address, pingTime, isOnline, la
   ctx.fillStyle = isOnline ? '#55FF55' : '#FF5555';
   ctx.font = 'bold 18px Arial';
   ctx.fillText(
-    isOnline ? (lang === 'vi' ? 'Đang hoạt động' : 'Online') : (lang === 'vi' ? 'Không hoạt động' : 'Offline'),
+    isOnline ? (lang === 'vi' ? 'Server Đang đang lọ đc' : 'Online') : (lang === 'vi' ? 'Cụ ra đi chân lạnh toát' : 'Offline'),
     iconX + iconSize + 20,
     iconY + 85
   );
@@ -171,7 +171,7 @@ async function createServerPingImage(serverData, address, pingTime, isOnline, la
     ctx.fillStyle = '#AAAAAA';
     ctx.font = 'bold 22px Arial';
     ctx.textAlign = 'left';
-    ctx.fillText(lang === 'vi' ? 'Người chơi:' : 'Players:', col1X, infoY);
+    ctx.fillText(lang === 'vi' ? 'Người chơi sayget:' : 'Players:', col1X, infoY);
     
     ctx.fillStyle = '#FFFFFF';
     ctx.font = '22px Arial';
@@ -259,10 +259,10 @@ async function createServerInfoImage(serverData, address, lang = 'en') {
   // Status
   ctx.fillStyle = '#55FF55';
   ctx.font = '18px Arial';
-  ctx.fillText(lang === 'vi' ? 'Đang hoạt động' : 'Online', iconX + iconSize + 25, iconY + 65);
+  ctx.fillText(lang === 'vi' ? 'Đang lọ đc' : 'Online', iconX + iconSize + 25, iconY + 65);
 
   // MOTD
-  let motdText = 'A Minecraft Server';
+  let motdText = 'A Minecraft Server xét gay';
   try {
     if (serverData.motd) {
       if (typeof serverData.motd === 'string') {
@@ -303,7 +303,7 @@ async function createServerInfoImage(serverData, address, lang = 'en') {
   ctx.fillStyle = '#AAAAAA';
   ctx.font = 'bold 24px Arial';
   ctx.textAlign = 'left';
-  ctx.fillText(lang === 'vi' ? 'Người chơi:' : 'Players:', leftCol, infoY);
+  ctx.fillText(lang === 'vi' ? 'Người chơi sayget:' : 'Players:', leftCol, infoY);
   ctx.fillStyle = '#FFFFFF';
   ctx.font = '24px Arial';
   ctx.fillText(`${serverData.players?.online || 0}/${serverData.players?.max || 0}`, leftCol, infoY + 35);
@@ -311,7 +311,7 @@ async function createServerInfoImage(serverData, address, lang = 'en') {
   // Version
   ctx.fillStyle = '#AAAAAA';
   ctx.font = 'bold 24px Arial';
-  ctx.fillText(lang === 'vi' ? 'Phiên bản:' : 'Version:', leftCol, infoY + lineSpacing + 20);
+  ctx.fillText(lang === 'vi' ? 'Phiên bủ:' : 'Version:', leftCol, infoY + lineSpacing + 20);
   ctx.fillStyle = '#55FFFF';
   ctx.font = '24px Arial';
   const versionText = serverData.version?.name || 'Unknown';
@@ -320,7 +320,7 @@ async function createServerInfoImage(serverData, address, lang = 'en') {
   // Latency
   ctx.fillStyle = '#AAAAAA';
   ctx.font = 'bold 24px Arial';
-  ctx.fillText(lang === 'vi' ? 'Độ trễ:' : 'Latency:', rightCol, infoY);
+  ctx.fillText(lang === 'vi' ? 'Độ lì:' : 'Latency:', rightCol, infoY);
   
   const latency = serverData.roundTripLatency || 0;
   const latencyColor = latency < 50 ? '#55FF55' : latency < 150 ? '#FFAA00' : '#FF5555';
@@ -396,17 +396,17 @@ async function createBotInfoImage(client, lang = 'en') {
   
   const info = [
     { label: lang === 'vi' ? 'Phiên bản' : 'Version', value: '1.0.0' },
-    { label: lang === 'vi' ? 'Thời gian hoạt động' : 'Uptime', value: formatUptime(uptime) },
+    { label: lang === 'vi' ? 'Thời gian lọ' : 'Uptime', value: formatUptime(uptime) },
     { label: lang === 'vi' ? 'Servers' : 'Servers', value: client.guilds.cache.size.toString() },
-    { label: lang === 'vi' ? 'Cấp độ' : 'Level', value: '90000' },
-    { label: lang === 'vi' ? 'Kinh nghiệm' : 'XP', value: '-1e+23' }
+    { label: lang === 'vi' ? 'Cấp độ tu hành' : 'Level', value: '90000' },
+    { label: lang === 'vi' ? 'Kinh nghiệm tu hành' : 'XP', value: '-1e+23' }
   ];
 
   ctx.textAlign = 'left';
   info.forEach((item, i) => {
     const y = startY + (i * lineHeight);
     
-    ctx.fillStyle = '#55FFFF';
+    ctx.fillStyle = '#fffc55ff';
     ctx.font = 'bold 22px Arial';
     ctx.fillText(item.label, 80, y);
     

@@ -9,8 +9,8 @@ module.exports = {
 
     console.log(`
 ======================================================
-MC BOT PING - Discord Bot
-Version: 1.0.0
+mc-bot-ping
+Version: 1.0.1
 Developer: Mytai
 GitHub: https://github.com/Mytai20100/mc-bot-ping
 ======================================================
